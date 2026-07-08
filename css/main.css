@@ -16,6 +16,11 @@ a {
   color: #1d1d1d;
   text-decoration: none;
 }
+img {
+  display: block;
+  user-select: none;
+  -webkit-user-drag: none;
+}
 
 /* Btn */
 .btn {
