@@ -80,10 +80,17 @@ p {
 .info {
   max-width: 330px;
   margin-bottom: 24px;
+  transform: translate(0, 100px);
+  transition: 1s;
+  opacity: 0;
+}
+.info.show {
+  transform: translate(0, 0);
+  opacity: 1;
 }
 .info .icon {
   width: 100px;
-  height: 100px;
+  height: 100px;*
   margin: 0 0 -15px -30px;
   animation: sprite-icon 3s steps(1) infinite;
 }
