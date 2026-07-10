@@ -12,13 +12,11 @@ html {
   --color-section: #f5f5f5;
   --color-shadow: rgba(0, 0, 0, 0.4);
 }
-
 html.fixed {
   position: fixed;
   overflow-y: scroll;
   width: 100%;
 }
-
 body {
   height: 10000px;
   font-size: 16px;
@@ -46,8 +44,13 @@ p {
   padding: 0 20px;
   position: relative;
 }
+/* Feature */
+.feature {
+  display: flex;
+}
 /* Figures */
 .figures {
+  flex-grow: 1;
   position: relative;
 }
 .figures figure,
@@ -61,7 +64,34 @@ p {
   top: 0;
   left: 0;
 }
-
+/* Infos */
+.infos {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 1;
+}
+.infos.infos--center {
+  justify-content: center;
+}
+.infos.infos--end {
+  justify-content: flex-end;
+}
+.info {
+  max-width: 330px;
+  margin-bottom: 24px;
+}
+.info .icon {
+  width: 100px;
+  height: 100px;
+  margin: 0 0 -15px -30px;
+  background-image: url('../images/sprite_apps.png');
+}
+.info p {
+  font-size: 21.5px;
+  font-weight: 600;
+  line-height: 1.5;
+}
 /* Btn */
 .btn {
   display: flex;
@@ -109,7 +139,6 @@ a.link:hover {
 a.link::after {
   content: ' > ';
 }
-
 /* Header  */
 header {
   --header-height: 44px;
@@ -159,7 +188,6 @@ header ul.menu > li.basket-starter > a {
 header ul.menu > li > a:hover {
   opacity: 1;
 }
-
 /* Header / Menu / Basket */
 header .basket {
   width: 290px;
@@ -179,7 +207,6 @@ header .basket.show {
   visibility: visible;
   opacity: 1;
 }
-
 header .basket .arrow {
   width: 20px;
   height: 10px;
@@ -221,7 +248,6 @@ header .basket ul li a {
 header .basket ul li a:hover {
   text-decoration: underline;
 }
-
 /* Header / Search  */
 header .search-wrap {
   position: absolute;
@@ -334,7 +360,6 @@ header.searching .search .autocompletes li {
   transition-delay: 0.2s;
   transform: translate(0, 0);
 }
-
 /* Navigation */
 nav {
   background-color: rgba(255, 255, 255, 0.7);
@@ -375,7 +400,6 @@ nav .menu li.active a {
 nav .menu li.active:hover a {
   color: var(--color-link-focus);
 }
-
 /* Hero */
 .hero {
   background-color: var(--color-section);
@@ -436,7 +460,6 @@ nav .menu li.active:hover a {
 .hero .links {
   margin-top: 30px;
 }
-
 /* Power */
 /* Power / Multiple Apps */
 .power {
@@ -459,19 +482,33 @@ nav .menu li.active:hover a {
 }
 /* Power / Arcade */
 .power .arcade {
+  margin-top: 55px;
 }
 .power .arcade .figures {
+  height: 600px;
 }
 .power .arcade figure {
+  transform: translate(-347px, -90px);
 }
 .power .arcade figcaption {
+  width: 150px;
+  height: 77px;
+  background-image: url('../images/power_arcade_caption.png');
+  transform: translate(483px, 653px);
 }
 /* Power / Create */
 .power .create {
+  margin-top: 55px;
 }
 .power .create .figures {
+  height: 772px;
 }
 .power .create figure {
+  transform: translate(-25px, 50px);
 }
 .power .create figcaption {
+  width: 142px;
+  height: 46px;
+  background-image: url('../images/power_create_caption.png');
+  transform: translate(543px, 908px);
 }
