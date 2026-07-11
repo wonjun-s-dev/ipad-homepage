@@ -38,6 +38,11 @@ img {
 p {
   line-height: 1.6;
 }
+sup {
+  margin-right: 6px;
+  font-size: 0.7em;
+  vertical-align: top;
+}
 /* Inner */
 .inner {
   max-width: 980px;
@@ -1062,6 +1067,7 @@ nav .menu li.active:hover a {
 footer {
   background-color: var(--color-section);
 }
+/* Footer / Buy-info */
 footer .buy-info {
   padding: 76px 0;
   display: flex;
@@ -1085,6 +1091,22 @@ footer .buy-info p {
 }
 footer .buy-info a.link {
   font-size: 14px;
+}
+/* Footer / Warning */
+footer .warning {
+  padding: 18px 0 10px;
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+}
+footer .warning ol {
+  list-style: decimal;
+  padding-left: 16px;
+}
+footer .warning li {
+  margin-bottom: 10px;
+  font-size: 11px;
+  line-height: 1.5;
+  color: var(--color-font-darkgray);
 }
 
 @keyframes sprite-icon {
