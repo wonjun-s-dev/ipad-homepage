@@ -46,7 +46,7 @@ searchShadowEl.addEventListener('click', hideSearch);
 
 function showSearch() {
   headerEl.classList.add('searching');
-  document.documentElement.classList.add('fixed');
+  stopScroll();
   headerMenuEls.reverse().forEach(function (el, index) {
     el.style.transitionDelay = (index * 0.4) / headerMenuEls.length + 's';
   });
@@ -59,7 +59,7 @@ function showSearch() {
 }
 function hideSearch() {
   headerEl.classList.remove('searching');
-  document.documentElement.classList.remove('fixed');
+  playScroll();
   headerMenuEls.reverse().forEach(function (el, index) {
     el.style.transitionDelay = (index * 0.4) / headerMenuEls.length + 's';
   });
@@ -69,6 +69,25 @@ function hideSearch() {
   searchDelayEls.reverse();
   searchInputEl.value = '';
 }
+function playScroll() {
+  document.documentElement.classList.remove('fixed');
+}
+function stopScroll() {
+  document.documentElement.classList.add('fixed');
+}
+
+// 헤더 메뉴 토글!
+const menuStarterEl = headerEl.querySelector('header .menu-starter');
+menuStarterEl.addEventListener('click', function () {
+  if (headerEl.classList.contains('menuing')) {
+    headerEl.classList.remove('menuing');
+
+    playScroll();
+  } else {
+    headerEl.classList.add('menuing');
+    stopScroll();
+  }
+});
 
 // 요소의 가시성 관찰
 const io = new IntersectionObserver(function (entries) {
